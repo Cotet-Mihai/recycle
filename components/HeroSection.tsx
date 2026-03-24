@@ -42,7 +42,7 @@ export default function HeroSection() {
             <div className="mx-auto max-w-7xl">
                 {/* 2. Textul Principal */}
                 <div className="mb-24 space-y-6 max-w-2xl">
-                    <h1 className="font-serif text-5xl md:text-7xl text-foreground leading-tight">
+                    <h1 className="font-serif text-5xl md:text-6xl font-bold text-foreground leading-tight">
                         Reciclează pentru <br />
                         un <span className="text-secondary-foreground italic">viitor sustenabil</span>
                     </h1>
