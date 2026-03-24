@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function BackgroundLayer() {
     return (
-        <div className="fixed inset-0 top-0 left-0 w-[100vw] h-[100vh] -z-50 pointer-events-none bg-[#02080a] overflow-hidden">
+        <div className="fixed inset-0 top-0 left-0 w-[100vw] h-[100vh] -z-50 pointer-events-none overflow-hidden">
 
             {/* 1. Predominantul: Albastru-Verzui (Petrol) - Baza asimetrică */}
             <div
