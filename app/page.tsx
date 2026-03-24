@@ -14,7 +14,6 @@ export default function Home() {
           <HeroSection/>
           <WhyRecycleSection/>
           <TargetAudienceSection/>
-          <PricesSection/>
           <OutMissionSection/>
           <FAQSection/>
           <ContactForm/>

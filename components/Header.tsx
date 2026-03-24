@@ -162,7 +162,7 @@ export function Header() {
                     <Button
                         className="relative bg-primary/40 border border-primary-foreground/40 hover:bg-primary hover:border-primary-foreground text-primary-foreground py-2.5 px-6 rounded-2xl font-bold uppercase text-xs tracking-widest transition-all duration-300  shadow-xl"
                     >
-                        <Link href="/solicitare-oferta">
+                        <Link href="/contact">
                             Contact
                         </Link>
                     </Button>
