@@ -4,8 +4,7 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { COMPANY } from "@/utils/data";
-import { cn } from "@/lib/utils";
+import {COMPANY} from "@/utils/data";
 
 const contact = [
     { icon: Phone, label: "Telefon", val: COMPANY.phone },
@@ -15,38 +14,38 @@ const contact = [
 
 export default function ContactForm() {
     return (
-        <section className="py-24 px-6 lg:px-10 bg-transparent">
-            <div className="max-w-7xl mx-auto relative  p-8 lg:p-16 rounded-[3rem] overflow-hidden">
+        <section className="pt-24 px-6 lg:px-10 bg-transparent mb-32">
+            <div className="max-w-7xl mx-auto">
 
 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
 
-                    {/* Coloana 1: Detalii Stanga */}
-                    <div className="lg:col-span-4 space-y-16 lg:mt-10">
+                    {/* Coloana 1: Detalii (Col 4) */}
+                    <div className="lg:col-span-4 space-y-16 mt-10">
                         <div className="space-y-6">
-                            <span className="text-[#7bb831] uppercase tracking-[0.4em] font-black text-[10px] block">
-                                Contact Direct
+                            <span className={'text-primary-foreground uppercase tracking-[0.4em] font-black text-[10px]'}>
+                                CONTACT DIRECT
                             </span>
-                            <h2 className="font-serif text-5xl lg:text-4xl font-bold text-white leading-tight">
+                            <h2 className="font-serif text-5xl lg:text-4xl font-bold text-foreground">
                                 Spune-ne cu ce <br />
-                                <span className="italic text-[#d5b976] text-5xl">te ajutăm.</span>
+                                <span className="italic text-secondary-foreground">te ajutăm.</span>
                             </h2>
-                            <p className="text-gray-400 text-base leading-relaxed max-w-md">
-                                Suntem aici pentru a transforma procesul de reciclare într-o experiență simplă și eficientă.
+                            <p className="text-muted-foreground text-sm leading-relaxed max-w-md">
+                                Suntem aici pentru a transforma procesul de reciclare într-o experiență simplă.
                             </p>
                         </div>
 
                         <div className="grid grid-cols-1 gap-10">
                             {contact.map((item, i) => (
-                                <div key={i} className="flex items-start gap-6 group">
-                                    <div className="mt-1 p-4 rounded-2xl bg-white/[0.03] border border-white/5 text-[#d5b976] group-hover:bg-[#d5b976] group-hover:text-[#1b2326] transition-all duration-500 shadow-xl">
-                                        <item.icon size={20} strokeWidth={2} />
+                                <div key={i} className="flex items-start gap-5 group">
+                                    <div className="mt-1 p-3 rounded-xl bg-background/20 text-secondary-foreground group-hover:bg-secondary-foreground group-hover:text-background group-hover:scale-110 transition-all duration-500">
+                                        <item.icon size={18} strokeWidth={2.5} />
                                     </div>
                                     <div className="space-y-1">
-                                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-gray-500">
+                                        <p className="text-[10px] font-black uppercase tracking-[0.2em] text-foreground/40 italic ">
                                             {item.label}
                                         </p>
-                                        <p className="text-xl font-bold text-gray-200 tracking-tight group-hover:text-white transition-colors">
+                                        <p className=" text-xl font-bold text-foreground/80 group-hover:text-foreground transition-colors tracking-tight duration-500">
                                             {item.val}
                                         </p>
                                     </div>
@@ -55,82 +54,84 @@ export default function ContactForm() {
                         </div>
                     </div>
 
-                    {/* Coloana 2: Formularul (Minimalist Dark) */}
-                    <div className="lg:col-span-8 bg-black/20 p-8 lg:p-14 rounded-[2.5rem] border border-white/5 shadow-inner">
+                    {/* Coloana 2: Formular (Col 8) */}
+                    <div className="lg:col-span-8 p-8 lg:p-12 rounded-[2rem] border border-border/5 bg-transparent shadow-2xl">
                         <form className="space-y-12">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12">
 
                                 {/* Nume */}
                                 <div className="group space-y-4">
-                                    <div className="flex items-center gap-2">
-                                        <span className="text-[10px] font-black text-[#d5b976]">01</span>
-                                        <Label className="text-[10px] font-black uppercase tracking-widest text-gray-500 group-focus-within:text-[#d5b976] transition-colors">
+                                    <div className="flex items-center gap-2 group">
+                                        <span className="text-[10px] font-black text-primary-foreground/50 group-focus-within:text-primary-foreground transition-all duration-500">01</span>
+                                        <Label className="text-[10px] font-black uppercase tracking-widest text-foreground/60 group-focus-within:text-foreground transition-all duration-500">
                                             Nume Complet
                                         </Label>
                                     </div>
                                     <Input
                                         type="text"
                                         placeholder="Cum vă numiți?"
-                                        className="border-0 border-b border-white/10 rounded-none px-0 py-6 text-xl font-medium focus-visible:ring-0 focus-visible:border-[#d5b976] transition-all bg-transparent shadow-none text-white placeholder:text-white/10"
+                                        className="border-0 border-b border-foreground/10 rounded-none px-0 py-6 text-xl font-medium focus-visible:ring-0 focus-visible:border-primary-foreground transition-all duration-500 bg-transparent shadow-none placeholder:text-foreground/40"
                                     />
                                 </div>
 
                                 {/* Email */}
                                 <div className="group space-y-4">
                                     <div className="flex items-center gap-2">
-                                        <span className="text-[10px] font-black text-[#d5b976]">02</span>
-                                        <Label className="text-[10px] font-black uppercase tracking-widest text-gray-500 group-focus-within:text-[#d5b976] transition-colors">
+                                        <span className="text-[10px] font-black text-primary-foreground/50 group-focus-within:text-primary-foreground transition-all duration-500">02</span>
+                                        <Label className="text-[10px] font-black uppercase tracking-widest text-foreground/60 group-focus-within:text-foreground transition-all duration-500">
                                             Adresă Email
                                         </Label>
                                     </div>
                                     <Input
                                         type="email"
                                         placeholder="exemplu@mail.ro"
-                                        className="border-0 border-b border-white/10 rounded-none px-0 py-6 text-xl font-medium focus-visible:ring-0 focus-visible:border-[#d5b976] transition-all bg-transparent shadow-none text-white placeholder:text-white/10"
+                                        className="border-0 border-b border-foreground/10 rounded-none px-0 py-6 text-xl font-medium focus-visible:ring-0 focus-visible:border-primary-foreground transition-all duration-500 bg-transparent shadow-none placeholder:text-foreground/40"
                                     />
                                 </div>
 
                                 {/* Mesaj */}
                                 <div className="group space-y-4 md:col-span-2">
                                     <div className="flex items-center gap-2">
-                                        <span className="text-[10px] font-black text-[#d5b976]">03</span>
-                                        <Label className="text-[10px] font-black uppercase tracking-widest text-gray-500 group-focus-within:text-[#d5b976] transition-colors">
-                                            Mesaj / Detalii Proiect
+                                        <span className="text-[10px] font-black text-primary-foreground/50 group-focus-within:text-primary-foreground transition-all duration-500">03</span>
+                                        <Label className="text-[10px] font-black uppercase tracking-widest text-foreground/60 group-focus-within:text-foreground transition-all duration-500">
+                                            Mesaj
                                         </Label>
                                     </div>
                                     <Textarea
                                         placeholder="Descrieți pe scurt solicitarea dumneavoastră..."
-                                        className="border-0 border-b border-white/10 rounded-none px-0 py-4 text-xl font-medium focus-visible:ring-0 focus-visible:border-[#d5b976] transition-all bg-transparent shadow-none min-h-[100px] resize-none text-white placeholder:text-white/10"
+                                        className="border-0 border-b border-foreground/10 rounded-none px-0 py-4 text-xl font-medium focus-visible:ring-0 focus-visible:border-primary-foreground transition-all duration-500 bg-transparent shadow-none placeholder:text-foreground/40 resize-none min-h-[120px]"
                                     />
                                 </div>
                             </div>
 
                             {/* Action Area */}
-                            <div className="flex flex-col md:flex-row items-center justify-between gap-10 pt-8 border-t border-white/5">
-                                <p className="text-[10px] text-gray-500 uppercase tracking-widest font-medium max-w-[250px] leading-relaxed">
+                            <div className="flex flex-col md:flex-row items-center justify-between gap-8 pt-6">
+                                <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-medium max-w-[200px] text-center md:text-left">
                                     Prin trimitere, sunteți de acord cu politica noastră de confidențialitate.
                                 </p>
 
-                                <div className="flex items-center gap-10 ml-auto group/btn">
-                                    <div className="flex flex-col items-end">
-                                        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-[#7bb831]">
-                                            Ready to go
+                                {/* Containerul părinte care grupează textul și butonul pentru a menține alinierea */}
+                                <div className="flex items-center gap-8 ml-auto">
+
+                                    {/* Textul este acum un simplu div, nu mai poți da click pe el pentru submit */}
+                                    <div className="flex flex-col items-start">
+                                        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-primary-foreground">
+                                            Validare date
                                         </span>
-                                        <span className="font-serif text-2xl md:text-3xl font-bold text-white group-hover/btn:text-[#d5b976] transition-colors">
+                                        <span className="font-serif text-2xl md:text-3xl font-bold text-foreground">
                                             Trimite Acum
                                         </span>
                                     </div>
 
+                                    {/* Butonul Shadcn - zona de click este limitată strict la acest cerc */}
                                     <button
                                         type="submit"
-                                        className="relative flex items-center justify-center w-20 h-20 rounded-full bg-[#d5b976] transition-all duration-500 hover:scale-110 active:scale-90 shadow-[0_0_30px_rgba(213,185,118,0.2)]"
+                                        className="group relative flex items-center justify-center w-20 h-20 rounded-full bg-secondary-foreground transition-all duration-500 hover:bg-primary-foreground active:scale-90"
                                     >
                                         <Send
-                                            className="relative z-10 text-[#1b2326]"
-                                            size={26}
+                                            className="relative z-10 text-primary group-hover:text-background transition-colors"
+                                            size={24}
                                         />
-                                        {/* Pulse Effect */}
-                                        <div className="absolute inset-0 rounded-full bg-[#d5b976] animate-ping opacity-20 group-hover/btn:opacity-40" />
                                     </button>
                                 </div>
                             </div>

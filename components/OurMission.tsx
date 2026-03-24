@@ -9,7 +9,7 @@ export default function OutMissionSection() {
     return (
         <section className="py-24 px-6 lg:px-10 bg-transparennt">
             {/* Container principal - Acum cu background inchis si border discret */}
-            <div className="max-w-7xl mx-auto rounded-[3rem] overflow-hidden relative bg-transparent border border-white/5 shadow-2xl">
+            <div className="max-w-7xl mx-auto rounded-[3rem] overflow-hidden relative bg-transparent border border-border/5 shadow-2xl">
 
                 {/* Textura carbon subtila */}
                 <div className="absolute inset-0 opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
