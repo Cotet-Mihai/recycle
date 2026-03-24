@@ -36,29 +36,29 @@ export default function HeroSection() {
                     className="object-cover"
                     priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#050c0e]/40 to-[#050c0e]" />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/40 to-background" />
             </div>
 
             <div className="mx-auto max-w-7xl">
                 {/* 2. Textul Principal */}
                 <div className="mb-24 space-y-6 max-w-2xl">
-                    <h1 className="font-serif text-5xl md:text-6xl text-white leading-tight">
+                    <h1 className="font-serif text-5xl md:text-7xl text-foreground leading-tight">
                         Reciclează pentru <br />
-                        un <span className="text-[#e2b35a] italic">viitor sustenabil</span>
+                        un <span className="text-secondary-foreground italic">viitor sustenabil</span>
                     </h1>
-                    <p className="text-gray-300 text-lg font-medium tracking-wide">
+                    <p className="text-foreground/70 text-lg font-medium tracking-wide">
                         Soluții premium de reciclare pentru un mediu curat
                     </p>
 
                     <div className={'w-full flex gap-5'}>
                         <Button
-                            className={'bg-[#1a3d34] border border-[#7ec636]/40 text-[#7ec636] p-6 rounded-full font-bold uppercase hover:scale-105 duration-300 hover:bg-[#234e43] hover:border-[#7ec636] shadow-xl'}
+                            className={'border border-primary-foreground/40 bg-primary hover:bg-primary hover:border-primary-foreground p-5 md:p-6 text-xs md:text-sm rounded-full font-bold uppercase hover:scale-105 duration-300 shadow-xl'}
                         >
                             Solicită o ofertă
                         </Button>
                         <Button
                             variant={'outline'}
-                            className={'p-6 rounded-full font-bold hover:scale-105 hover:bg-[#d5b976] hover:border-none duration-400 bg-transparent text-white'}
+                            className={'rounded-full border-foreground font-bold hover:scale-105 p-5 md:p-6 text-xs md:text-sm duration-400 hover:bg-transparent bg-transparent text-white'}
                         >
                             Află mai mult
                         </Button>
@@ -70,7 +70,7 @@ export default function HeroSection() {
                     {heroCards.map((card, idx) => (
                         <div
                             key={idx}
-                            className="relative group h-[450px] overflow-hidden rounded-xl border border-white/10 shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:border-[#e2b35a]/30"
+                            className="relative group h-[450px] overflow-hidden rounded-xl border border-foreground/10 shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:border-border/30"
                         >
                             {/* IMAGINEA DE FUNDAL A CARDULUI */}
                             <div className="absolute inset-0 -z-10">
@@ -81,10 +81,7 @@ export default function HeroSection() {
                                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
                                 {/* Overlay întunecat pentru lizibilitate (Vignette) */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#050c0e] via-[#050c0e]/20 to-black/40" />
-
-                                {/* Overlay textura de zgomot */}
-                                <div className="absolute inset-0 opacity-20 mix-blend-overlay bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')]" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-background via-primary/20 to-black/40" />
                             </div>
 
                             {/* CONȚINUTUL CARDULUI (Poziționat deasupra imaginii) */}
@@ -92,31 +89,28 @@ export default function HeroSection() {
 
                                 {/* Header Card */}
                                 <div className="w-full">
-                                    <h3 className="text-2xl font-bold text-white">
+                                    <h3 className="text-2xl font-bold text-foreground">
                                         {card.title} <br />
-                                        <span className="text-[#e2b35a] italic font-serif font-medium">{card.subtitle}</span>
+                                        <span className="text-secondary-foreground italic font-serif font-medium">{card.subtitle}</span>
                                     </h3>
                                     {/* Linie aurie sub titlu */}
-                                    <div className="mt-4 mx-auto w-12 h-[1px] bg-[#e2b35a]/50" />
+                                    <div className="mt-4 mx-auto w-12 h-[1px] bg-border/50" />
                                 </div>
 
                                 {/* Body Card */}
                                 <div className="flex flex-col items-center gap-6">
-                                    <p className="text-gray-200 text-sm leading-relaxed max-w-[220px] drop-shadow-md">
+                                    <p className="text-foreground/90 text-sm leading-relaxed max-w-sm drop-shadow-md">
                                         {card.description}
                                     </p>
 
-                                    <button className="flex items-center gap-3 text-[11px] font-bold uppercase tracking-[0.2em] text-[#7ec636] hover:text-white transition-all group/btn">
+                                    <button className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-primary-foreground hover:text-foreground transition-all group/btn">
                                         Vezi detalii
-                                        <div className="w-8 h-8 rounded-full border border-[#7ec636]/30 bg-[#7ec636]/10 flex items-center justify-center group-hover/btn:bg-[#7ec636] group-hover/btn:text-black transition-all">
+                                        <div className="w-8 h-8 rounded-full border border-primary-foreground/30 bg-primary/10 flex items-center justify-center group-hover/btn:bg-primary-foreground group-hover/btn:text-black transition-all">
                                             <ArrowRight size={14} />
                                         </div>
                                     </button>
                                 </div>
-                            </div>
-
-                            {/* Efect de strălucire la hover pe margini */}
-                            <div className="absolute inset-0 border border-white/0 group-hover:border-white/10 transition-colors pointer-events-none rounded-xl" />
+                            </div>s
                         </div>
                     ))}
                 </div>
