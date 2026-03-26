@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Card } from "@/components/ui/card";
 import React from "react";
+import Link from "next/link";
 
 export default function TargetAudienceSection() {
     return (
@@ -20,14 +21,15 @@ export default function TargetAudienceSection() {
                     </p>
                 </div>
 
-                <div>
-                    <Button
-                        variant={'outline'}
-                        className={'p-6 rounded-full font-bold hover:scale-105 hover:bg-transparent duration-400 bg-transparent text-foreground border-foreground'}
-                    >
+                <Button
+                    variant={'outline'}
+                    className={'p-6 rounded-full font-bold hover:scale-105 hover:bg-transparent duration-400 bg-transparent text-foreground border-foreground'}
+                    asChild
+                >
+                    <Link href={'/despre-noi'}>
                         Află mai mult
-                    </Button>
-                </div>
+                    </Link>
+                </Button>
             </div>
 
             {/* Cards */}

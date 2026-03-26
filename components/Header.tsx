@@ -166,7 +166,6 @@ export function Header() {
                             </Button>
                         </DialogTrigger>
 
-                        {/* Dialog Content: Fără scroll (overflow-hidden), înălțime fixată max-h-[500px] */}
                         <DialogContent className="sm:max-w-3xl w-full p-0 bg-background/95 backdrop-blur-3xl border border-border/10 sm:rounded-[2rem] overflow-hidden shadow-2xl">
 
                             {/* Titluri ascunse pentru screen readere */}

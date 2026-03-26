@@ -2,6 +2,16 @@ import React from 'react';
 import Image from 'next/image';
 import { ArrowRight } from "lucide-react";
 import {Button} from "@/components/ui/button";
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger
+} from "@/components/ui/dialog";
+import ContactDialog from "@/components/ContactDialog";
+import Link from "next/link";
 
 const heroCards = [
     {
@@ -51,16 +61,34 @@ export default function HeroSection() {
                     </p>
 
                     <div className={'w-full flex gap-5'}>
-                        <Button
-                            className={'border border-primary-foreground/40 bg-primary hover:bg-primary hover:border-primary-foreground p-5 md:p-6 text-xs md:text-sm rounded-full font-bold uppercase hover:scale-105 duration-300 shadow-xl'}
-                        >
-                            Solicită o ofertă
-                        </Button>
+                        <Dialog>
+                            <DialogTrigger asChild>
+                                <Button
+                                    className={'border border-primary-foreground/40 bg-primary hover:bg-primary hover:border-primary-foreground p-5 md:p-6 text-xs md:text-sm rounded-full font-bold uppercase hover:scale-105 duration-300 shadow-xl'}
+                                >
+                                    Solicită o ofertă
+                                </Button>
+                            </DialogTrigger>
+
+                            <DialogContent className="sm:max-w-3xl w-full p-0 bg-background/95 backdrop-blur-3xl border border-border/10 sm:rounded-[2rem] overflow-hidden shadow-2xl">
+
+                                {/* Titluri ascunse pentru screen readere */}
+                                <DialogHeader className="sr-only">
+                                    <DialogTitle>Conexiune Directă</DialogTitle>
+                                    <DialogDescription>Contactează-ne rapid sau folosește informațiile de mai jos.</DialogDescription>
+                                </DialogHeader>
+
+                                <ContactDialog/>
+                            </DialogContent>
+                        </Dialog>
                         <Button
                             variant={'outline'}
                             className={'rounded-full border-foreground font-bold hover:scale-105 p-5 md:p-6 text-xs md:text-sm duration-400 hover:bg-transparent bg-transparent text-white'}
+                            asChild
                         >
-                            Află mai mult
+                            <Link href={'/despre-noi'}>
+                                Află mai mult
+                            </Link>
                         </Button>
                     </div>
                 </div>
@@ -104,10 +132,14 @@ export default function HeroSection() {
                                     </p>
 
                                     <button className="flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-primary-foreground hover:text-foreground transition-all group/btn">
-                                        Vezi detalii
-                                        <div className="w-8 h-8 rounded-full border border-primary-foreground/30 bg-primary/10 flex items-center justify-center group-hover/btn:bg-primary-foreground group-hover/btn:text-black transition-all">
-                                            <ArrowRight size={14} />
-                                        </div>
+                                        <Link href={'/despre-noi'}>
+                                            <div className={'flex justify-center items-center gap-2'}>
+                                                Vezi detalii
+                                                <div className="w-8 h-8 rounded-full border border-primary-foreground/30 bg-primary/10 flex items-center justify-center group-hover/btn:bg-primary-foreground group-hover/btn:text-black transition-all">
+                                                    <ArrowRight size={14} />
+                                                </div>
+                                            </div>
+                                        </Link>
                                     </button>
                                 </div>
                             </div>s

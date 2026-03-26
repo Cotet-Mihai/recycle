@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 
-export default function OutMissionSection() {
+export default function OurMissionSection() {
     return (
         <section className="py-24 px-6 lg:px-10 bg-transparennt">
             {/* Container principal - Acum cu background inchis si border discret */}
