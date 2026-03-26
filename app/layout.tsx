@@ -3,6 +3,8 @@ import "./globals.css";
 import {Header} from "@/components/Header";
 import {montserrat} from "@/utils/fonts";
 import Footer from "@/components/Footer";
+import HeroSection from "@/components/HeroSection";
+import BackgroundLayer from "@/components/BackgroundLayer";
 
 export const metadata: Metadata = {
     title: 'Eco Elite | Colectare și Reciclare Deșeuri',
@@ -27,6 +29,7 @@ export default function RootLayout({
         >
             <body className="min-h-full flex flex-col">
                 <Header/>
+                <BackgroundLayer/>
                 {children}
                 <Footer/>
             </body>
