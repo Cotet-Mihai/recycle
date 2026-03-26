@@ -161,9 +161,9 @@ export default function Footer() {
                     <p className="text-muted-foreground text-[10px] font-bold uppercase tracking-[0.2em]">
                         © {new Date().getFullYear()} {COMPANY.name} {COMPANY.legalForm}
                     </p>
-                    <div className="flex gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
-                        <Link href="/termeni-si-conditii" className="hover:text-secondary-foreground transition-colors">Termeni</Link>
-                        <Link href="/politica-cookies" className="hover:text-secondary-foreground transition-colors">Cookies</Link>
+                    <div className="flex gap-8 text-[10px] uppercase tracking-widest text-muted-foreground">
+                        <Link href="/termeni-si-conditii" className="hover:text-white transition-colors">Termeni și Condiții</Link>
+                        <Link href="/politica-cookies" className="hover:text-white transition-colors">Politica Cookies</Link>
                     </div>
                 </div>
             </div>
