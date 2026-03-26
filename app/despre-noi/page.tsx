@@ -53,7 +53,7 @@ export default function AboutPage() {
                             src="/images/plant.png"
                             alt="Facilitate industrială Eco Elite"
                             fill
-                            className="object-cover lg:grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100 opacity-30 group-hover:opacity-100"
+                            className="object-cover group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100 opacity-30 group-hover:opacity-100"
                             sizes="(max-w-768px) 100vw, 100vw"
                         />
                         <div className="absolute bottom-8 left-8 z-20">
@@ -69,7 +69,7 @@ export default function AboutPage() {
                             src="/images/copper-tree.png"
                             alt="Reciclare echipamente electronice"
                             fill
-                            className="object-cover lg:grayscale group-hover:grayscale-0 transition-all duration-700 hover:scale-105 opacity-30 group-hover:opacity-100"
+                            className="object-cover group-hover:grayscale-0 transition-all duration-700 hover:scale-105 opacity-30 group-hover:opacity-100"
                         />
                         <div className="absolute bottom-8 left-8 z-20">
                             <p className="text-primary-foreground text-[10px] uppercase tracking-[0.3em] font-black mb-2">02.</p>

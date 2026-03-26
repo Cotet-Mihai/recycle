@@ -1,5 +1,7 @@
+"use client";
+
 import Link from "next/link";
-import { Menu, Recycle } from "lucide-react";
+import { Menu, Recycle, Phone, Mail, MapPin } from "lucide-react";
 import {
     Sheet,
     SheetClose,
@@ -10,8 +12,17 @@ import {
     SheetTitle,
     SheetTrigger
 } from "@/components/ui/sheet";
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "@/components/ui/dialog";
 import { COMPANY } from "@/utils/data";
-import {Button} from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
+import ContactDialog from "@/components/ContactDialog";
 
 const navigation = [
     { name: "Acasă", href: "/" },
@@ -22,26 +33,20 @@ const navigation = [
 export function Header() {
     return (
         <header className="fixed top-0 left-0 right-0 z-50 h-16 flex items-center">
-            {/* --- FUNDALUL HEADER-ULUI (Industrial Grunge Match) --- */}
-            <div className="absolute inset-0 -z-10 bg-background overflow-hidden border-b border-foreground/5">
-
-                {/* 1. Predominantul: Albastru-Verzui (Petrol) - Baza asimetrică */}
+            {/* --- FUNDALUL HEADER-ULUI --- */}
+            <div className="absolute inset-0 -z-10 bg-background overflow-hidden border-b border-border/5">
                 <div
                     className="absolute inset-0 opacity-100"
                     style={{
                         background: `radial-gradient(circle at 20% 0%, #0a2429 0%, #02080a 100%)`
                     }}
                 />
-
-                {/* 2. Detaliul Galben Subtil (Ocre/Amber) - Poziționat asimetric spre dreapta */}
                 <div
                     className="absolute top-[-20px] left-[70%] -translate-x-1/2 w-[60%] h-[100px] opacity-30 blur-[50px]"
                     style={{
                         background: 'radial-gradient(ellipse at center, #7d5a32 0%, #4a341d 50%, transparent 100%)'
                     }}
                 />
-
-                {/* 3. Textura ta principală (petele de mizerie din texture.jpg) */}
                 <div
                     className="absolute inset-0 opacity-40 mix-blend-multiply"
                     style={{
@@ -51,8 +56,6 @@ export function Header() {
                         filter: 'contrast(1.1) brightness(0.9)'
                     }}
                 />
-
-                {/* 4. Stratul de NOISE ORGANIC (Pentru a sparge uniformitatea exact ca în background) */}
                 <div className="absolute inset-0 opacity-10 mix-blend-overlay">
                     <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
                         <filter id="headerGrunge">
@@ -67,8 +70,6 @@ export function Header() {
                         <rect width="100%" height="100%" filter="url(#headerGrunge)" />
                     </svg>
                 </div>
-
-                {/* 5. Vinietă fină jos (Efect de profunzime) */}
             </div>
 
             <nav className="flex items-center justify-between mx-auto max-w-7xl w-full px-6 lg:px-10">
@@ -84,7 +85,6 @@ export function Header() {
                             side="top"
                             className="flex flex-col border-none bg-background text-foreground h-[90vh] rounded-b-[2rem] p-0 overflow-hidden"
                         >
-                            {/* Overlay pentru meniul mobil */}
                             <div className="absolute inset-0 opacity-1 pointer-events-none bg-[url('/texture.jpg')] bg-cover" />
                             <div className="absolute inset-0 bg-gradient-to-b from-primary/60 to-black" />
 
@@ -157,15 +157,29 @@ export function Header() {
                     ))}
                 </div>
 
-                {/* 4. Desktop CTA */}
+                {/* 4. Desktop CTA (Modal Fără Scroll) */}
                 <div className="hidden md:flex md:flex-1 md:justify-end">
-                    <Button
-                        className="relative bg-primary/40 border border-primary-foreground/40 hover:bg-primary hover:border-primary-foreground text-primary-foreground py-2.5 px-6 rounded-2xl font-bold uppercase text-xs tracking-widest transition-all duration-300  shadow-xl"
-                    >
-                        <Link href="/contact">
-                            Contact
-                        </Link>
-                    </Button>
+                    <Dialog>
+                        <DialogTrigger asChild>
+                            <Button
+                                className="relative bg-primary/40 border border-primary-foreground/40 hover:bg-primary hover:border-primary-foreground text-primary-foreground py-2.5 px-6 rounded-2xl font-bold uppercase text-xs tracking-widest transition-all duration-300 shadow-xl cursor-pointer"
+                            >
+                                Contact
+                            </Button>
+                        </DialogTrigger>
+
+                        {/* Dialog Content: Fără scroll (overflow-hidden), înălțime fixată max-h-[500px] */}
+                        <DialogContent className="sm:max-w-3xl w-full p-0 bg-background/95 backdrop-blur-3xl border border-border/10 sm:rounded-[2rem] overflow-hidden shadow-2xl">
+
+                            {/* Titluri ascunse pentru screen readere */}
+                            <DialogHeader className="sr-only">
+                                <DialogTitle>Conexiune Directă</DialogTitle>
+                                <DialogDescription>Contactează-ne rapid sau folosește informațiile de mai jos.</DialogDescription>
+                            </DialogHeader>
+
+                            <ContactDialog/>
+                        </DialogContent>
+                    </Dialog>
                 </div>
             </nav>
         </header>
