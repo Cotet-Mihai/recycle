@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { ShieldCheck, Factory, Clock } from "lucide-react";
 import { COMPANY } from "@/utils/data";

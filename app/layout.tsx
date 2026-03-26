@@ -3,8 +3,8 @@ import "./globals.css";
 import {Header} from "@/components/Header";
 import {montserrat} from "@/utils/fonts";
 import Footer from "@/components/Footer";
-import HeroSection from "@/components/HeroSection";
 import BackgroundLayer from "@/components/BackgroundLayer";
+import React from "react";
 
 export const metadata: Metadata = {
     title: 'Eco Elite | Colectare și Reciclare Deșeuri',
@@ -17,11 +17,7 @@ export const metadata: Metadata = {
     },
 }
 
-export default function RootLayout({
-                                       children,
-                                   }: Readonly<{
-    children: React.ReactNode;
-}>) {
+export default function RootLayout({ children, }: Readonly<{  children: React.ReactNode; }>) {
     return (
         <html
             lang="ro"

@@ -3,7 +3,6 @@ import { ChevronRight, Scale } from "lucide-react";
 import {COMPANY} from "@/utils/data";
 
 export default function TermsAndConditions() {
-    const currentYear = new Date().getFullYear();
 
     return (
         <section className="py-24 px-6 lg:px-10 min-h-screen">

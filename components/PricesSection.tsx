@@ -1,5 +1,3 @@
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import { Card } from "@/components/ui/card";
 import { METALS } from "@/utils/data";
 import SimpleCalculator from "@/components/SimpleCalculator";

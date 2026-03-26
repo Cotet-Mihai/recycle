@@ -1,7 +1,5 @@
-"use client";
-
 import Link from "next/link";
-import { Menu, Recycle, Phone, Mail, MapPin } from "lucide-react";
+import { Menu, Recycle } from "lucide-react";
 import {
     Sheet,
     SheetClose,
